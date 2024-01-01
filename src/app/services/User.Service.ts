@@ -2,16 +2,18 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { JwtWithData, jwt, jwtWithVerified, userJwtData, userLoginData, userRegisterData } from "./UserDto";
 import { LoaderService } from "./loader.service";
+import { environment } from "../Environments/Environment";
 
 @Injectable({
     providedIn: 'root'
 })
+
 export class UserServices {
     
     constructor ( private http : HttpClient,
         private loaderService: LoaderService ) {  }
     
-    private url = 'musicsync-backend-production.up.railway.app';
+    private url = environment.BACKEND_URL;
 
     private port = '5179'
     Login ( body : userLoginData ) {
