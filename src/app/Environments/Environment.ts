@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    BACKEND_URL: `http://localhost:5000`
+    BACKEND_URL: `musicsyncapi.azurewebsites.net`
 }
