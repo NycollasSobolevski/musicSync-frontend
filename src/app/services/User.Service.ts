@@ -17,8 +17,6 @@ export class UserServices {
     private url = environment.BACKEND_URL;
 
     Login ( body : userLoginData ) {
-        console.log(this.url);
-        
         return this.http
             .post<JwtWithData<boolean>>( `${this.url}/User/Login`, body )
             .pipe();
