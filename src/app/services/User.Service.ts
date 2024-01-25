@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { JwtWithData, jwt, jwtWithVerified, userJwtData, userLoginData, userRegisterData } from "./UserDto";
 import { LoaderService } from "./loader.service";
 import { environment } from "../Environments/Environment";
+import { switchMap } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
