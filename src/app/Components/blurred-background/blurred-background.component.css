@@ -1,0 +1,31 @@
+.background-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;left: 0;
+    display: flex;
+    filter: blur(100px);
+    backdrop-filter: blur(50) ;
+    flex-direction: column;
+}
+.background-container span{
+    border-radius: 100%;
+    position: absolute;
+}
+.background-container span:nth-child(1){
+    width: 30vw; height: 30vw;
+    background-color: #FBFF4D;
+}
+
+.background-container span:nth-child(2){
+    width: 50vw; height: 50vw;
+    background-color: #37FFB7;
+    top: 25vh; right: 0;
+}
+
+.background-container span:nth-child(3){
+    width: 60vw; height: 60vw;
+    bottom: 0;
+
+    background-color: #00FFFF;
+}

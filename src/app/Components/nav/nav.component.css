@@ -33,7 +33,7 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px 0 20px ;
-  background-color: var(--menu-background-color);
+  background-color: transparent;
   color: white;
   font-weight: 600;
   box-shadow: 0 0 10px black;

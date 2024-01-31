@@ -34,6 +34,7 @@ import { SendPasswordComponent } from './Components/ForgetPassword/send-password
 import { TransferTracksComponent } from './Components/PlaylistTransferComponents/transfer-tracks/transfer-tracks.component';
 import { MenuCardComponent } from './Components/menu-card/menu-card.component';
 import { PlaylistCardComponent } from './Components/CardComponents/playlist-card/playlist-card.component';
+import { BlurredBackgroundComponent } from './Components/blurred-background/blurred-background.component';
 
 
 const COMPONENTS = [
@@ -68,7 +69,7 @@ const COMPONENTS = [
   PlaylistCardComponent,
 ]
 @NgModule({
-  declarations: [COMPONENTS, ],
+  declarations: [COMPONENTS, BlurredBackgroundComponent, ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -4,7 +4,9 @@
     border: 0;
     color: var(--text-colorB);
 }
-
+body{
+    background-color: var(--default-background-color);
+}
 button{
     background-color: transparent;
 

@@ -20,11 +20,11 @@
     --loader-background-color: #00000083;
     --menu-header-background: #06004a9f;
     --semitransparent-background: rgb(0,0,0,0.2);
-    --default-background-color: var(--sec-color) ;
+    --default-background-color: #131313 ;
     --menu-background-color: var(--sec-color) ;
     --default-box-shadow-color: black;
     --seccondary-box-shadow-color: #4d92b9;
-    --background-mesher-blur-image: radial-gradient(at 2% 40%, hsla(207,74%,40%,1) 0px, transparent 50%),radial-gradient(at 29% 73%, hsla(206,75%,41%,1) 0px, transparent 50%),radial-gradient(at 90% 81%, hsla(207,38%,30%,1) 0px, transparent 50%),radial-gradient(at 67% 44%, hsla(207,83%,52%,1) 0px, transparent 50%);
+    --background-mesher-blur-image: radial-gradient(at 20% 5%, #fcff4d90 0px, transparent 25%);
     
     
     --desktop-max-width: 1200px;
