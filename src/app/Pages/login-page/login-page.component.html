@@ -1,11 +1,13 @@
+<app-blurred-background></app-blurred-background>
 <div class="main-container">
-    <app-blurred-background></app-blurred-background>
-
+    <div class="logo-container">
+        <img src="../../../assets/Logos/MS Logo & Letter v1.svg" alt="" height="70px">
+    </div>
     <div class="container" *ngIf="!VerifyEmail">
         <div class="wall" [ngStyle]="{'left' : ( isLogin ? 'calc(25vw )' : 'calc(25vw - (50vw / 2 ))' )}">
             <div class="content">
                 <h2>Music Sync</h2>
-                <img src="../../assets/transparent logo with border.png" height="200px" alt="">
+                <img src="../../assets/Logos/MS Logo v1.svg" height="200px" alt="">
             </div>
         </div>
         <app-login class="{{ isLogin ? '' : ' hidden' }}"

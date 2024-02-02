@@ -10,12 +10,13 @@
     --back-colorC: #06004a;
     --text-colorA: Black;
     --text-colorB: AliceBlue;
-    --input-colorA: rgba(4, 44, 155, 0.2);
+    --input-colorA: #363636b5;
     --red-alert-color: #f35858c0 ;
     --yellow-alert-color: #f3d758c0;
 }
 
 :root{
+    --primary-btn-color:#84FBFB;
     --input-border-color: #000000;
     --loader-background-color: #00000083;
     --menu-header-background: #06004a9f;

@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-subscribe',
   templateUrl: './subscribe.component.html',
-  styleUrls: ['./subscribe.component.css']
+  styleUrls: ['./subscribe.component.css','../login/login.component.css']
 })
 export class SubscribeComponent {
   constructor ( private router : Router, private service  : UserServices ) {}

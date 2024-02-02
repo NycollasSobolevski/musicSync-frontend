@@ -25,7 +25,7 @@ form{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 1.35rem;
 }
 .form-container{
     width: 100%;
@@ -38,11 +38,18 @@ form{
 }
 input{
     width: 100%;
-    height: 2rem;
+    height: 2.2rem;
     background-color: var(--input-colorA);
-    padding-left: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
     border-radius: 5px;
+    font-style: bold;
+    font-weight: 300;
     color: var(--text-colorB);
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.186);
+}
+input::placeholder{
+    font-weight: bold;
 }
 input:focus{
     outline: none;
@@ -54,11 +61,6 @@ input:focus{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-}
-.input-container span{
-    width: 100%;
-    height: 1px;
-    background-color: white;
 }
 .buttons{
     width: 100%;
@@ -76,13 +78,19 @@ button {
     min-height: 10px;
     width: 65%;
     height: 3rem;
-    background-color: var(--qua-color);
-    border-radius: 5px;
+    background-color: var(--primary-btn-color);
+    border-radius: 15px;
+    color: black;
+    font-weight: bolder;
     font-size: larger;
 }
 @media (max-width: 760px) {
     .input-container{
         width: 150%;
+    }
+    header{
+        position: relative;
+        top: 2rem;
     }
     
 }

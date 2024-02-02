@@ -10,7 +10,6 @@
                 <input type="text"
                 formControlName="identify"
                 placeholder="Login / Email">
-                <span></span>
                 <div class="error-input-validation" *ngIf="identify.invalid && formDir.submitted" >
                     <p *ngIf="identify.errors?.['required']" >Required input</p>
                 </div>
@@ -19,7 +18,6 @@
                 <input type="password" 
                 formControlName="password"
                 placeholder="Password">
-                <span></span>
                 <div class="error-input-validation" *ngIf="password.invalid && formDir.submitted">
                     <p *ngIf="password.errors?.['required']" >Required input</p>
                 </div>
