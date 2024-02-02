@@ -22,4 +22,8 @@ button{
 button:hover{
     cursor: pointer;
 }
+a{
+    font-size: smaller;
+    cursor: pointer;
+}
 
