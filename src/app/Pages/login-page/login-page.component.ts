@@ -1,21 +1,28 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { jwt } from 'src/app/services/UserDto';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit, OnDestroy {
+
   constructor (
     private router : Router,
-    private route : ActivatedRoute
-  ) {}
+    private route : ActivatedRoute,
+    private navService : NavbarService
+  ) {
+
+  }
+
   @Output() sendAlertEvent = new EventEmitter<string>();
   alertMessage = "";
   alertContainer = false;
   VerifyEmail= false;
+  
   protected jwt : jwt = {
     value: ''
   };
@@ -23,7 +30,10 @@ export class LoginPageComponent {
   protected isLogin = true;
   
   ngOnInit(){
-    
+    this.navService.hide();
+  }
+  ngOnDestroy(): void {
+    this.navService.display();
   }
   changeToSigin () {
     this.isLogin = !this.isLogin;

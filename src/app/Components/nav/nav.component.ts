@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnDestroy {
   title = 'MusicSync';
+  show: boolean = true;
+  subscription: Subscription;
 
-  constructor ( private router : Router ) {}
+  constructor ( private router : Router, private navbarService : NavbarService ) {
+    this.subscription = this.navbarService.showNavbar.subscribe((value) => {
+      this.show = value;
+
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(){
     this.checkIfLogin();
