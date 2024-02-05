@@ -1,7 +1,5 @@
 .home-page-container{
-    background: var(--background-mesher-blur-image);
     display: grid;
-    
     grid-template:
     "menu main main" auto
     "menu main main" auto

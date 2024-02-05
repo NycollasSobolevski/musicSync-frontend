@@ -6,7 +6,7 @@
     display: flex;
     filter: blur(100px);
     flex-direction: column;
-    z-index: 0;
+    z-index: -1;
     overflow: hidden;
 }
 .background-container span{

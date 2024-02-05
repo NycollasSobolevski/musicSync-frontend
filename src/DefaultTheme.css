@@ -1,10 +1,5 @@
 :root {
-    --pri-color : #2190EB;
-    --sec-color : #3a5061;
-    --ter-color : #1A71B8;
-    --qua-color : #69B2EE;
-    --qui-color : #061629;
-    --ms-blue-50 :#1a6eb3;
+    --gray-50: #272727;
     --back-colorA: #14281D;
     --back-colorB: #060b0f;
     --back-colorC: #06004a;
@@ -19,10 +14,9 @@
     --primary-btn-color:#84FBFB;
     --input-border-color: #000000;
     --loader-background-color: #00000083;
-    --menu-header-background: #06004a9f;
-    --semitransparent-background: rgb(0,0,0,0.2);
+    --menu-header-background: var(--gray-50);
+    --semitransparent-background: rgba(0, 0, 0, 0.319);
     --default-background-color: #131313 ;
-    --menu-background-color: var(--sec-color) ;
     --default-box-shadow-color: black;
     --seccondary-box-shadow-color: #4d92b9;
     --background-mesher-blur-image: radial-gradient(at 20% 5%, #fcff4d90 0px, transparent 25%);
