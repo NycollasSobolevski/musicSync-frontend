@@ -1,10 +1,9 @@
-import { Injectable } from "@angular/core";
+import { Injectable, isDevMode } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { JwtWithData, jwt, jwtWithVerified, userJwtData, userLoginData, userRegisterData } from "./UserDto";
 import { LoaderService } from "./loader.service";
-import { environment } from "../Environments/Environment";
 import { switchMap } from "rxjs";
-
+import { environment } from "../Environments/Environment";
 @Injectable({
     providedIn: 'root'
 })
@@ -12,7 +11,12 @@ import { switchMap } from "rxjs";
 export class UserServices {
     
     constructor ( private http : HttpClient,
-        private loaderService: LoaderService ) {  }
+        private loaderService: LoaderService ) {  
+            if(isDevMode()){
+                console.log(environment);
+                
+            }
+        }
     
     private url = environment.BACKEND_URL;
 
