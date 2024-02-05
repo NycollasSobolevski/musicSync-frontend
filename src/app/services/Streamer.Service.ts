@@ -3,16 +3,21 @@ import { HttpClient } from "@angular/common/http";
 import { CallbackData, NewPlaylist, NewTrack, NewTrackToPlaylist, Playlist, PlaylistsArray, StringReturn, itemsOfPlaylist } from "./SpotifyDto";
 import { JWTWithGetPlaylistData, JwtWithData, jwt } from "./UserDto";
 import {  IStreamerService } from "./IStreamer.Service";
-import { environment } from "../Environments/Environment";
+import { EnvironmentsService } from "./environments.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class StreamerService implements IStreamerService{
+    private environment;
     private url: string | undefined;
     
-    constructor (private http : HttpClient) { 
-        this.url = environment.BACKEND_URL + "/" ;
+    constructor (
+        private http : HttpClient,
+        private envService : EnvironmentsService
+    ) { 
+        this.environment = envService.getEnvironment();
+        this.url = this.environment.BACKEND_URL + "/" ;
     }
 
     GetAccesUrl  ( streamer: string,  data : jwt ) {

@@ -3,22 +3,23 @@ import { HttpClient } from "@angular/common/http";
 import { JwtWithData, jwt, jwtWithVerified, userJwtData, userLoginData, userRegisterData } from "./UserDto";
 import { LoaderService } from "./loader.service";
 import { switchMap } from "rxjs";
-import { environment } from "../Environments/Environment";
+import { EnvironmentsService, environmentDto } from "./environments.service";
+// import { environment } from "../Environments/Environment.prod";
+
 @Injectable({
     providedIn: 'root'
 })
 
 export class UserServices {
-    
+    environment: environmentDto;
     constructor ( private http : HttpClient,
-        private loaderService: LoaderService ) {  
-            if(isDevMode()){
-                console.log(environment);
-                
-            }
+        private loaderService: LoaderService, 
+        private envService: EnvironmentsService ) {  
+            this.environment = envService.getEnvironment()
+            this.url = this.environment.BACKEND_URL
         }
     
-    private url = environment.BACKEND_URL;
+    private url ;
 
     Login ( body : userLoginData ) {
         return this.http
