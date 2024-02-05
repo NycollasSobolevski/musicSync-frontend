@@ -3,7 +3,7 @@ import { StreamerService } from '../../services/Streamer.Service';
 import { StringReturn } from '../../services/SpotifyDto';
 import { ActivatedRoute, Router } from '@angular/router';
 import { jwt } from '../../services/UserDto';
-import { streamers } from './streamers';
+import { streamers } from '../../../streamers';
 
 @Component({
   selector: 'app-menu',

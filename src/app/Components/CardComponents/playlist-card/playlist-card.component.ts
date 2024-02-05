@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { PlaylistsArray, itemsOfPlaylist } from 'src/app/services/SpotifyDto';
 import { StreamerService } from 'src/app/services/Streamer.Service';
 import { JWTWithGetPlaylistData, jwt } from 'src/app/services/UserDto';
+import {streamers} from '../../../../streamers'
 
 @Component({
   selector: 'app-playlist-card',
@@ -11,14 +12,15 @@ import { JWTWithGetPlaylistData, jwt } from 'src/app/services/UserDto';
   styleUrls: ['./playlist-card.component.css']
 })
 export class PlaylistCardComponent {
+
   constructor (
     private service : StreamerService,
     private sanitizer : DomSanitizer,
     private router : Router
-    ) {}
-    // !TODO: Implementar o closeCard
-    @Input() streamer! : string;
-    @Output() closeCardEvent = new EventEmitter()
+  ) {}
+  
+  @Input() streamer! : string;
+  @Output() closeCardEvent = new EventEmitter()
 
   playlists : PlaylistsArray = {
     items: []
@@ -77,6 +79,20 @@ export class PlaylistCardComponent {
     }
   );
   }
+// !=======================aqui==========================
+  getStreamerIcon(){
+    var path='';
+    streamers.streamers.forEach(element => {
+      if(element.name === this.streamer)
+        path = element.path
+      console.log(typeof(element.path));
+      
+    });
+    console.log(path);
+    
+    return path
+  }
+// !=================================================
 
   async ngOnInit() {
     if (this.jwt.jwt.value == "") 
