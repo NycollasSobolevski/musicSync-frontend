@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { StreamerService } from 'src/app/services/Streamer.Service';
 import { jwt } from 'src/app/services/UserDto';
 import { Alert } from 'src/app/services/Funcionalities';
-
+import { streamers } from 'src/streamers';
 @Component({
   selector: 'app-streamers-config',
   templateUrl: './streamers-config.component.html',
@@ -10,11 +10,10 @@ import { Alert } from 'src/app/services/Funcionalities';
 })
 export class StreamersConfigComponent {
   constructor( 
-    private spotifyService : StreamerService
-  ){
-    
-  }
+    private streamerService : StreamerService
+  ){ }
 
+  protected streamers = streamers.streamers;
 
   public Jwt : jwt = {
     value : "",
@@ -36,14 +35,7 @@ export class StreamersConfigComponent {
   }
 
   logoffTogle( streamer : string ){
-    switch (streamer) {
-      case "Spotify":
-        this.alertShow("Are you shure","You will be logged out of Spotify", () => this.logoffSpotify());
-        break;
-    
-      default:
-        break;
-    }
+    this.alertShow("Are you shure","You will be logged out of Spotify", () => this.logoffSpotify(streamer));
   }
 
   alertShow (title : string, message : string, functionToCall? : Function) {
@@ -63,7 +55,7 @@ export class StreamersConfigComponent {
   }
 
   //! transform in class to others streamers use!!!
-  logoffSpotify(){
+  logoffSpotify(streamer : string){
     var jwtValue = sessionStorage.getItem("jwt") ?? "";
     var jwtt: jwt ={
       value: jwtValue,
@@ -71,7 +63,7 @@ export class StreamersConfigComponent {
 
     if(jwtt.value == "")
       window.location.href = "/login";
-    this.spotifyService.LogOff("Spotify",jwtt).subscribe({
+    this.streamerService.LogOff(streamer,jwtt).subscribe({
       next: data => {
         window.location.reload();
       },

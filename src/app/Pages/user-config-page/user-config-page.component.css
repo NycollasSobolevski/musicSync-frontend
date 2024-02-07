@@ -3,13 +3,14 @@
     display: none;
 }
 main{
-    max-width: calc(100vw - 5px);
-    max-height: calc(100vh - 60px);
+    /* max-width: calc(100vw - 5px);
+    max-height: calc(100vh - 60px); */
     display: flex;
+    height: 100%;
     align-items: center;
     justify-content: start;
     overflow: scroll;
-    top: 70px;
+    /* top: 70px; */
     position: relative;
 }
 .content{
