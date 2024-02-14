@@ -1,6 +1,6 @@
 .card{
     margin: auto;
-    position: fixed;
+    position: absolute;
     top: 0; bottom: 0; right: 0; left: 0;
     width: calc(60vw - 40px );
     max-width: 50rem  ;
@@ -48,11 +48,11 @@
     cursor: pointer;
 }
 .playlists-item{
-    height: 5vh;
+    height: 75px;
     width: 60%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: start;
     text-align: left;
     gap: 10px;
     background-color: var(--semitransparent-background);

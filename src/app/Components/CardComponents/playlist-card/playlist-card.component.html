@@ -2,20 +2,22 @@
     <div class="header">
         <div></div>
         <a href="{{playlists.href}}">
-            <svg viewBox="0 0 32 32">
-                <path [attr.d]="getStreamerIcon()"/>
+            <svg viewBox="0 0 32 32"width="100px" height="">
+                <path  [attr.d]="getStreamerIcon()" />
             </svg>
         </a>
         <button class="close" (click)="closeCard()">
             <svg viewBox="0 0 24 24" ><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
         </button>
     </div>
-    <button class="playlists-item" (click)="getPlaylistTracks(playlist)" *ngFor="let playlist of playlists.items">
-        <img src={{playlist.images[0].url}} alt="Playlist Image">
-        <section>
-            <h5>{{playlist.name}}</h5>
-            <p>{{playlist.owner.display_name}}</p>
-        </section>
-    </button>
+    <div class="items-session">
+        <button class="playlists-item" (click)="getPlaylistTracks(playlist)" *ngFor="let playlist of playlists.items">
+            <img src={{playlist.images[0].url}} alt="Playlist Image">
+            <section>
+                <h5>{{playlist.name}}</h5>
+                <p>{{playlist.owner.display_name}}</p>
+            </section>
+        </button>
+    </div>
     <button (click)="morePlaylists()">More</button>
 </div>

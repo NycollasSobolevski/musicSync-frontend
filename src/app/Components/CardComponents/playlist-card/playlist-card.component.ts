@@ -79,20 +79,19 @@ export class PlaylistCardComponent {
     }
   );
   }
-// !=======================aqui==========================
-  getStreamerIcon(){
+
+  public getStreamerIcon(){
     var path='';
     streamers.streamers.forEach(element => {
-      if(element.name === this.streamer)
+
+      if(element.name.toUpperCase() === this.streamer.toUpperCase()){
         path = element.path
-      console.log(typeof(element.path));
-      
+      }
     });
     console.log(path);
     
     return path
   }
-// !=================================================
 
   async ngOnInit() {
     if (this.jwt.jwt.value == "") 
