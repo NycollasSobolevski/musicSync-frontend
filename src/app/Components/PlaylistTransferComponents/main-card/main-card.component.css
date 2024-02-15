@@ -68,6 +68,14 @@ option{
     font-size: small;
     color: red;
 }
+
+
+@media screen and (max-width: 768px) {
+    .main-transfer-container{
+        padding: 0;
+        width: 100%;
+    }
+}
 @media screen and (max-width: 576px) {
     .selects-container{
         flex-direction: column;
@@ -76,7 +84,10 @@ option{
         transform: rotate(90deg);
     }
     .main-transfer-container{
-        width: calc(95vw - 6rem - 2px);
-        height: 60vh;
+        width: calc(95vw);
+        height: 80vh;
+        position: absolute;
+        top: 0;left: 0;right: 0;bottom: 0;
+        margin: auto;
     }
 }

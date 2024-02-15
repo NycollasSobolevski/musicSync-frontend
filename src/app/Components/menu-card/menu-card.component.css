@@ -5,15 +5,10 @@
     gap: 10px;
     padding: 10px;
 }
-svg{
+svg, path{
     width: 30px;
     height: 30px;
-
-}
-path{
-    width: 30px;
-    height: 30px;
-
+    fill: var(--text-colorB);
 }
 .bg{
     width: 100vw;
@@ -28,9 +23,14 @@ a{
     text-decoration: none;
 }
 .streamer-label{
-    font-size: smaller; 
-
-    @media (max-width: 576px) {
+    font-size: small;
+}
+@media (max-width: 768px) {
+    .streamer-label{
         display:none;
+    }
+    svg, path{
+        width: 50px;
+        height: 50px;
     }
 }
