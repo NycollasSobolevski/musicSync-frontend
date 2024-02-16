@@ -3,7 +3,7 @@ a{
 }
 
 main{
-    width: 100vw;
+    /* width: 100vw; */
     height: 100%;
 }
 .container::-webkit-scrollbar{
@@ -15,33 +15,30 @@ main{
     overflow-y: scroll;
     top: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: .35rem;
 }
 .playlist-streamer{
     font-size: xx-small;
 }
 .header-container{
-    padding: 1.5rem;
-    margin: 0 0 2rem 0 ;
-    background: 
-        linear-gradient(
-            180deg, 
-            var(--menu-header-background) 0%, 
-            rgba(0, 0, 0, 0) 100%
-        );
-
-    backdrop-filter: blur(5px) opacity(.5);
-    width: calc(100vw - 3rem);
+    height: 98%;
+    width: 25vw;
+    margin-left: .35rem;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;flex-direction: column;
+    align-items: center; justify-content: center;
+    border-radius: 20px;
 }
 .playlist-header{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
+    margin: 3rem;
 
     @media screen and (max-width: 600px) {
-        flex-direction: column;
         margin: .5rem;
         gap: 1rem;
     }
@@ -53,8 +50,20 @@ main{
     align-items: start;
     gap: .25rem;
 }
-table{
+.table{
+    height: 98%;
     width: 90%;
+    background-color:rgba(0,0,0,0.7) ;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: .35rem;
+}
+table{
+    margin: 3rem 2rem;
+    width: calc(100% - (3rem*2));
 }
 td{
     display: flex;
@@ -66,7 +75,6 @@ td{
     flex-direction: column;
     align-items: start;
     justify-content: flex-start;
-
 }
 .playlist-header img{
     height: 10rem;
@@ -75,11 +83,6 @@ td{
 .playlist-header .playlist-description{
     font-size: small;
     text-align: justify;
-}
-
-
-table{
-    width: 100%;
 }
 .music-item{
     display: flex;
@@ -110,7 +113,6 @@ table{
 }
 .artists-music-session p{
     display: flex;
-
     gap: 10px;
     font-size: x-small;
 }
